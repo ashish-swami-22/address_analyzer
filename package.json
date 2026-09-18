@@ -1,0 +1,13 @@
+{
+  "name": "india-address-intelligence",
+  "private": true,
+  "packageManager": "pnpm@9.15.5",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @app/api --filter @app/web dev",
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint ."
+  },
+  "devDependencies": { "@eslint/js": "^9.17.0", "@types/node": "^22.10.5", "eslint": "^9.17.0", "typescript": "^5.7.2", "vitest": "^2.1.8" }
+}

@@ -1,0 +1,5 @@
+import type { AddressAnalysisResult, Coordinate } from '@app/shared';
+const baseUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:4000/api';
+export async function analyzeAddress(address: string): Promise<AddressAnalysisResult> { const response = await fetch(`${baseUrl}/address/analyze`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ address }) }); if (!response.ok) throw new Error('Unable to analyze address'); return response.json(); }
+export async function encodeCoordinate(coordinate: Coordinate): Promise<{ digipin: string }> { const response = await fetch(`${baseUrl}/digipin/encode`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(coordinate) }); if (!response.ok) throw new Error('Unable to encode coordinates'); return response.json(); }
+export async function decodeDigipin(digipin: string): Promise<Coordinate> { const response = await fetch(`${baseUrl}/digipin/decode`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ digipin }) }); if (!response.ok) throw new Error('Unable to decode DIGIPIN'); return response.json(); }

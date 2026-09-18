@@ -1,0 +1,2 @@
+import type { ParsedAddress } from '@app/shared'; import { Card } from '../common/Card';
+export function ParsedAddressCard({ address }: { address: ParsedAddress }) { return <Card><h3 className="mb-4 font-semibold text-ink">Parsed components</h3><div className="grid grid-cols-2 gap-4 text-sm">{Object.entries(address).map(([key, value]) => <div key={key}><p className="text-xs uppercase tracking-wide text-slate-400">{key}</p><p className="mt-1 text-slate-700">{value || '—'}</p></div>)}</div></Card>; }

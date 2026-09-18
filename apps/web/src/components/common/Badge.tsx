@@ -1,0 +1,1 @@
+export function Badge({ children, tone = 'slate' }: { children: React.ReactNode; tone?: 'slate' | 'teal' | 'amber' }) { const colors = { slate: 'bg-slate-100 text-slate-600', teal: 'bg-teal-50 text-teal-700', amber: 'bg-amber-50 text-amber-700' }; return <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${colors[tone]}`}>{children}</span>; }
