@@ -1,5 +1,5 @@
 # Architecture
 
-The repository is a pnpm workspace with two applications and two packages. `apps/web` owns the React experience; `apps/api` owns HTTP transport and delegates business logic to services. `packages/shared` contains contracts used by both applications, while `packages/digipin` is a deterministic, dependency-free geographic grid package.
+The repository is a pnpm workspace with one application, two reusable packages, and a Supabase backend. `apps/web` owns the React experience and invokes the `analyze-address` Supabase Edge Function. `packages/shared` contains domain contracts, while `packages/digipin` is a deterministic, dependency-free geographic grid package.
 
-Provider interfaces in the API are deliberately placeholders. No database, authentication, external geocoder, LLM, or maps service is connected yet.
+The Edge Function currently contains mock resolution logic and persists results to the `address_analyses` Postgres table. No authentication, external geocoder, LLM, or maps service is connected yet. The service-role key is server-only; the browser uses only the Supabase anon key.
