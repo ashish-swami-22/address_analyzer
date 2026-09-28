@@ -2,7 +2,7 @@ import {
   DIGIPIN_GRID,
   DIGIPIN_LENGTH,
   INDIA_DIGIPIN_BOUNDS,
-} from "./constants";
+} from "./constants.ts";
 export function encodeDigipin(latitude: number, longitude: number): string {
   if (
     !Number.isFinite(latitude) ||

@@ -2,8 +2,8 @@ import {
   DIGIPIN_ALPHABET,
   DIGIPIN_GRID,
   INDIA_DIGIPIN_BOUNDS,
-} from "./constants";
-import type { Coordinate } from "./types";
+} from "./constants.ts";
+import type { Coordinate } from "./types.ts";
 export function decodeDigipin(digipin: string): Coordinate {
   const normalized = digipin.replaceAll("-", "").toUpperCase();
   if (

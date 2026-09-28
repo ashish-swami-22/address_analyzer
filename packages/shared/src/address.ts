@@ -31,5 +31,5 @@ export interface AddressAnalysisResult {
   issues: AddressIssue[];
   recommendations: string[];
   geocoding?: GeocodingResult;
-  isMock: true;
+  isMock: boolean;
 }

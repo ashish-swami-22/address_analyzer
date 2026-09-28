@@ -60,9 +60,9 @@ export function HomePage() {
           <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-red-800">
             <p className="font-semibold">Unable to load the analysis</p>
             <p className="mt-2 text-sm">
-              Make sure the Supabase project and{" "}
-              <code className="rounded bg-red-100 px-1">analyze-address</code>{" "}
-              function are deployed, then try again.
+              {mutation.error instanceof Error
+                ? mutation.error.message
+                : "The Supabase request failed. Check the browser console and Edge Function logs."}
             </p>
           </div>
         ) : hasSubmitted && mutation.data ? (

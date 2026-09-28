@@ -28,7 +28,8 @@ export function AnalysisResult({ result }: { result: AddressAnalysisResult }) {
           )}
         </div>
         <Badge tone={isResolved ? "teal" : "amber"}>
-          {statusLabels[result.status]} · mock
+          {statusLabels[result.status]}
+          {result.isMock ? " · mock" : ""}
         </Badge>
       </div>
       {result.status === "confirmation_required" && (
@@ -87,6 +88,11 @@ export function AnalysisResult({ result }: { result: AddressAnalysisResult }) {
           <div className="mt-5 flex h-32 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-400">
             Map area placeholder · geospatial view
           </div>
+          {result.geocoding?.provider === "nominatim" && (
+            <p className="mt-2 text-xs text-slate-400">
+              Geocoding © OpenStreetMap contributors via Nominatim
+            </p>
+          )}
         </Card>
         <ParsedAddressCard address={result.parsedAddress} />
         <AddressIssues

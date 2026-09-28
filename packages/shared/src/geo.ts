@@ -5,5 +5,5 @@ export interface Coordinate {
 export interface GeocodingResult {
   coordinate: Coordinate;
   displayName: string;
-  provider: "placeholder";
+  provider: "nominatim";
 }
